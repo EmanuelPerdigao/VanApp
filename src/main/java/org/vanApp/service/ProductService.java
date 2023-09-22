@@ -13,15 +13,25 @@ public interface ProductService {
      * @param id the product id
      * @return the product
      */
-    Optional<Product> get(Long id);
+    Optional<Product> getById(Long id);
 
     /**
-     * Saves a customer
+     * Saves a product
      *
      * @param product the product to save
      * @return the saved product
      */
-    Product saveOrUpdateProduct(Product product);
+    Product saveProduct(Product product);
+
+
+    /**
+     * Update a product
+     *
+     * @param product the product to update
+     * @return the updated product
+     */
+    Product updateProduct(Product product);
+
 
     /**
      * Deletes a product
