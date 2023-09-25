@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/product")
 public class ProductController {
 
@@ -58,7 +59,7 @@ public class ProductController {
 
 
     //#############################  UPDATE A PRODUCT  ########################################
-    @RequestMapping(method = RequestMethod.POST, path = {"/update"})
+    @RequestMapping(method = RequestMethod.PUT, path = {"/update"})
     public ResponseEntity<String> updateProduct(@RequestBody Product product) {
 
         if (!productService.getById(product.getId()).isPresent()) {
