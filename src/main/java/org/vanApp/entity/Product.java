@@ -20,15 +20,31 @@ public class Product {
     @Column(name = "price")
     private float price;
 
+    @Column(name = "category")
+    private String category;
+
+    @Column(name = "sold")
+    private Boolean sold = false;
+
+    @Column(name = "image")
+    private byte[] image;
+
     public Product() {
 
     }
-    public Product(long id, String name, String description, float price) {
+
+
+    public Product(long id, String name, String description, float price, String category, boolean sold, byte[] image) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.category = category;
+        this.sold = sold;
+        this.image = image;
     }
+
+
 
     public long getId() {
         return id;
@@ -61,4 +77,30 @@ public class Product {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public boolean isSold() {
+        return sold;
+    }
+
+    public void setSold(boolean sold) {
+        this.sold = sold;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+
 }
